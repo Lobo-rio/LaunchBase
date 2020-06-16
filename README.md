@@ -13,8 +13,8 @@
 
 <p align="center">
 
-  <a href="https://rocketseat.com.br">
-    <img alt="Made by Rocketseat" src="https://img.shields.io/badge/made%20by-Rocketseat-%23F8952D">
+  <a href="#">
+    <p>Gilberto Medeiros</p>
   </a>
 
   <a href="LICENSE" >
