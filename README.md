@@ -38,4 +38,6 @@ Desafios para fortalecer alguns conceitos, entre eles:
 - **Padronização**;
 - **Escrita**.
 
+## :memo: Licença
 
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
