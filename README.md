@@ -27,4 +27,15 @@ Desafios para fortalecer alguns conceitos, entre eles:
 
 - **Variáveis**;
 - **Condicionais**;
-- **Operadores**.
+- **Operadores**;
+- **Objetos**;
+- **Vetores**;
+- **Funções e métodos**;
+- **Estruturas de repetição**;
+- **Escopos**;
+- **Booleanos**;
+- **Organização**;
+- **Padronização**;
+- **Escrita**.
+
+
