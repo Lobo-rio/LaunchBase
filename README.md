@@ -27,4 +27,17 @@ Desafios para fortalecer alguns conceitos, entre eles:
 
 - **Variáveis**;
 - **Condicionais**;
-- **Operadores**.
+- **Operadores**;
+- **Objetos**;
+- **Vetores**;
+- **Funções e métodos**;
+- **Estruturas de repetição**;
+- **Escopos**;
+- **Booleanos**;
+- **Organização**;
+- **Padronização**;
+- **Escrita**.
+
+## :memo: Licença
+
+Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
