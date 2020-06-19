@@ -25,6 +25,11 @@ section {
 
     padding: 46px;
     border-radius: 10px;
+    cursor: pointer;
+}
+
+.contents .card:hover {
+    border: 2px solid var(--color-green);
 }
 
 .contents .card h2 {
@@ -54,12 +59,15 @@ section {
     height: 100%;
     position: fixed;
     top: 0;
+    opacity: 0;
+    visibility: hidden;
 }
 
 .modal-overlay .modal {
     background-color: white;
     width: 90%;
     height: 90%;
+    border-radius: 10px;
     margin: 5vh auto;
     position: relative;
 }
@@ -71,6 +79,11 @@ section {
     right: 8px;
     top: 8px;
     cursor: pointer;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
 }
 
 iframe {
