@@ -20,7 +20,7 @@
 
 </p>
 
-<h2 align="center">
+<h2>
   Fase 01
 </h2>
 
@@ -39,7 +39,7 @@ Desafios para fortalecer alguns conceitos, entre eles:
 - **Padronização**;
 - **Escrita**.
 
-<h2 align="center">
+<h2>
   Fase 02
 </h2>
 
