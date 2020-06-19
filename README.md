@@ -13,15 +13,16 @@
 
 <p align="center">
 
-  <a href="#">
-    <p>Gilberto Medeiros</p>
-  </a>
-
+  
   <a href="LICENSE" >
     <img alt="License" src="https://img.shields.io/badge/license-MIT-%23F8952D">
   </a>
 
 </p>
+
+<h2 align="center">
+  Fase 01
+</h2>
 
 Desafios para fortalecer alguns conceitos, entre eles:
 
@@ -37,6 +38,15 @@ Desafios para fortalecer alguns conceitos, entre eles:
 - **Organização**;
 - **Padronização**;
 - **Escrita**.
+
+<h2 align="center">
+  Fase 02
+</h2>
+
+- **HTM5**;
+- **CSS3**;
+- **JavaScript**.
+
 
 ## :memo: Licença
 
