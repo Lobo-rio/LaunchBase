@@ -1,0 +1,21 @@
+header {
+    padding: 30px;
+    background: rgba(0, 0, 0, 0.1);
+    border-bottom: 1px solid #333;
+}
+
+header div {
+    text-align: center;
+}
+
+header div a {
+    color: white;
+    font-size: 1.4rem;
+    line-height: 28px;
+    margin: 0 16px;
+}
+
+header div a:hover {
+    color: var(--color-green);
+    transition: color 200ms;
+}

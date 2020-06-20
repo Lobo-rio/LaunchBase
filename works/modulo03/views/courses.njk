@@ -1,0 +1,49 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+    <title>Cursos - GSM Treinamento</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="styles/courses.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section>
+        <div class="courses">
+            <h1>Cursos da Rocketseat</h1>
+
+            <div class="cards">
+
+                {% for item in items %}
+                    <div class="card" id="{{ item.id }}">
+                        <img src="{{ item.image }}" alt="Imagem do {{ item.title }}">
+                        <h2>{{ item.title }}</h2>
+                        <div class="card-body">
+                            <p>{{ item.module }}</p>
+                            <p class="card_price">{{ item.price }}</p>
+                        </div>
+                    </div>
+                {% endfor %}
+
+            </div>
+        </div>
+    </section>
+
+    <div class="modal-overlay">
+        <div class="modal">
+            <a class="close-modal">
+                <i class="fa fa-times" aria-hidden="true"></i>
+            </a>
+            <div class="modal-content">
+                <iframe src="" frameborder="0"></iframe>
+            </div>
+        </div>
+    </div>
+
+    {% block scripts %}
+        <script src="scripts/index.js"></script>
+    {% endblock scripts %}
+
+{% endblock content %}

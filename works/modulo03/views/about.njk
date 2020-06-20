@@ -1,0 +1,29 @@
+{% extends "layout.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="styles/section.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section>
+        <div class="company">
+
+            <img src="{{ items.avatar }}" alt="Imagem do {{ items.title }}">
+            <h1>{{ items.title }}</h1>
+            <h2>{{ items.subtitle }}</h2>
+            <p>{{ items.description }}</p>
+
+            <ul>
+                {% for item in items.technology %}
+                    <li>{{ item.name }}</li>
+                {% endfor %}
+            </ul>
+
+            {% for social in items.socialNetworks %}
+            <a href="{{ social.link }}">{{ social.social }}</a>
+            {% endfor %}
+            
+        </div>
+    </section>
+{% endblock content %}

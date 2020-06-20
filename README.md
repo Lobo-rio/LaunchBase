@@ -45,8 +45,19 @@ Desafios para fortalecer alguns conceitos, entre eles:
 
 - **HTM5**;
 - **CSS3**;
-- **JavaScript**.
+- **JavaScript**;
+- **NodeJS**;
+- **Express**;
+- **Nodemon**;
+- **Nunjucks**.
 
+<h2>
+  Fase 02 (Foodfy)
+</h2>
+
+- **HTM5**;
+- **CSS3**;
+- **JavaScript**.
 
 ## :memo: Licença
 

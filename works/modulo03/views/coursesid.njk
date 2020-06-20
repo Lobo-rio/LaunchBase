@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+    <title>Cursos por ID - GSM Treinamento</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="styles/courses.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section>
+        <div class="courses">
+            <h1>{{ item.title }}</h1>
+
+            <div class="details">
+                <span>Modelo: {{ item.module }}</span>
+                <span class="price">Modelo: {{ item.price }}</span>
+            </div>
+            
+            <div class="description">
+               <iframe src="https://rocketseat.com.br/{{ name }}" frameborder="0"></iframe>
+            </div>
+        </div>
+    </section>
+{% endblock content %}

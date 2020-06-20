@@ -1,0 +1,20 @@
+:root {
+    --color-green: #50fa7b;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    font-size: 12px;
+    background-color: #282a36;
+    color: white;
+}
+
+a {
+    text-decoration: none;
+}

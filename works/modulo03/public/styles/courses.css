@@ -1,0 +1,113 @@
+section {
+    text-align: center;
+    padding: 30px;
+}
+
+.courses {
+    margin: 30px 0;
+}
+
+.courses h1 {
+    font-size: 42px;
+    line-height: 52px;
+    font-weight: 700;
+}
+
+.courses .cards{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+}
+
+.courses .card {
+    margin-top: 32px;
+    background-color: rgba(0,0,0,0.1);
+
+    padding: 46px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.courses .card:hover {
+    border: 2px solid var(--color-green);
+}
+
+.courses .card h2 {
+    margin: 24px 0;
+}
+
+.courses .card .card-body {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.courses .card .card-body p {
+    padding: 5px;
+}
+
+.courses .card .card-body p.card_price {
+    background-color: rgba(0,0,0,0.5);
+    filter: brightness(90%);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.courses .details {
+    margin: 0 350px;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    
+}
+
+.courses .details span {
+    margin-top: 26px;
+    padding: 10px;
+}
+
+.courses .details span.price {
+    background-color: rgba(0,0,0,0.3);
+    border-radius: 8px;
+}
+
+.courses .description iframe {
+    width: 940px;
+    height: 560px;
+    margin-top: 36px;
+
+}
+
+.modal-overlay {
+    background-color: rgba(0,0,0,0.8);
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    opacity: 0;
+    visibility: hidden;
+}
+
+.modal-overlay .modal {
+    background-color: white;
+    width: 90%;
+    height: 90%;
+    border-radius: 10px;
+    margin: 5vh auto;
+    position: relative;
+}
+
+.modal-overlay .modal a.close-modal {
+    color: black;
+    font-size: 18px;
+    position: absolute;
+    right: 8px;
+    top: 8px;
+    cursor: pointer;
+}
+
+.modal-overlay.active {
+    opacity: 1;
+    visibility: visible;
+}
