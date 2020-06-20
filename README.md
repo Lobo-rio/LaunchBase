@@ -52,12 +52,16 @@ Desafios para fortalecer alguns conceitos, entre eles:
 - **Nunjucks**.
 
 <h2>
-  Fase 02 (Foodfy)
+  Fase 02 (Foodfy) - Refatorando
 </h2>
 
 - **HTM5**;
 - **CSS3**;
-- **JavaScript**.
+- **JavaScript**,
+- **NodeJS**;
+- **Express**;
+- **Nodemon**;
+- **Nunjucks**.
 
 ## :memo: Licença
 
