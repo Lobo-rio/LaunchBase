@@ -2,6 +2,9 @@
     --color-black: #111111;
     --color-cinza: #777777;
     --color-footer: #EEEEEE;
+    --color-selection: #dfe4ea;
+    --color-selection-hover: #ced6e0;
+    --color-list: #444444;
 }
 
 * {
