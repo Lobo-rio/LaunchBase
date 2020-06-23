@@ -1,16 +1,26 @@
 const express = require('express')
+const instructors = require('../instructors')
+
 const Router = express.Router();
 
 
-Router.get("/", (req, res)=>{
+Router.get("/", function(req, res){
     res.redirect("/instructors")
 })
 
-Router.get("/instructors", (req, res)=> {
+Router.post("/instructors", instructors.post )
+
+Router.get("/instructors", function(req, res) {
     res.render("instructors/index.njk")
 })
 
-Router.get("/members", (req, res)=> {
+Router.get("/instructors/create", function(req, res){
+    res.render("instructors/create.njk")
+})
+
+
+
+Router.get("/members", function(req, res) {
     res.render("members/index.njk")
 })
 

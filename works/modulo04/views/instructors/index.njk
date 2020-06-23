@@ -1,21 +1,42 @@
 {% extends "layout.njk" %}
 
 {% block styles %}
-    <link rel="stylesheet" href="styles/instructors.css">
+    <link rel="stylesheet" href="/styles/instructors.css">
 {% endblock styles %}
-
 
 {% block content %}
 
-<div class="card">
+    <div class="card">
 
-<section class="avatar"  style="background: url(https://source.unsplash.com/collection/3465564/900x900) no-repeat center center / cover">
+        <section class="avatar" style="background: url(https://source.unsplash.com/collection/3465564/900x900) no-repeat center center / cover"></section>
 
-</section>
+        <section class="details">
+            <h3>Detalhes</h3>
+            <div class="item">
+                <div>Instrutor</div>
+                <div>Gilberto Medeiros</div>
+            </div>
+            <div class="item">
+                <div>Idade</div>
+                <div>49</div>
+            </div>
+            <div class="item">
+                <div>Sexo</div>
+                <div>Masculino</div>
+            </div>
+            <div class="item">
+                <div>Acompanhamento</div>
+                <div>
+                    <span>Musculação</span>
+                    <span>CrosFit</span>
+                </div>
+            </div>
+            <div class="item">
+                <div>Desde</div>
+                <div>01-01-2020</div>
+            </div>
 
-<section class="details">
+        </section>
 
-</section>
-
-</div>
+    </div>
 {% endblock content %}

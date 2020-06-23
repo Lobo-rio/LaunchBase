@@ -1,0 +1,12 @@
+{
+  "instructors": [
+    {
+      "avatar_url": "http://www.google.com",
+      "name": "GSM Tecnologia",
+      "birth": 1273017600000,
+      "gender": "M",
+      "services": "Musculação, Crosfitt",
+      "created_at": 1592919946394
+    }
+  ]
+}
