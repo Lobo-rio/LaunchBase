@@ -79,7 +79,8 @@ form input::placeholder {
     font-weight: normal;
 }
 
-form button[type="submit"] {
+form button[type="submit"],
+a.button {
     padding: 8px 32px;
     background-color: var(--primary-color);
     color: white;
@@ -89,6 +90,13 @@ form button[type="submit"] {
     margin-top: 32px;
     width: 100%;
 }
+
+a.button {
+    display: block;
+    text-align: center;
+    text-decoration: none;
+}
+
 
 @keyframes up {
     from {
