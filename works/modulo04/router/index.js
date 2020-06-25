@@ -16,11 +16,15 @@ Router.get("/instructors/create", function(req, res){
     res.render("instructors/create.njk")
 })
 
-Router.post("/instructors", instructors.post)
-
 Router.get("/instructors/:id", instructors.show)
 
 Router.get("/instructors/:id/edit", instructors.edit)
+
+Router.post("/instructors", instructors.post)
+
+Router.put("/instructors", instructors.put)
+
+Router.delete("/instructors", instructors.delete)
 
 Router.get("/members", function(req, res) {
     res.render("members/index.njk")
