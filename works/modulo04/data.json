@@ -12,15 +12,15 @@
       "height": "177"
     },
     {
-      "id": 2,
-      "avatar_url": "https://images.unsplash.com/photo-1593051292423-a86d80624f98?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=750&q=80",
-      "name": "GSM Tecnologia",
+      "id": 3,
+      "avatar_url": "https://images.unsplash.com/photo-1547919307-1ecb10702e6f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "TGSHG Tecnologia",
       "email": "gsilvamedeiros@gmail.com",
-      "birth": 408326400000,
+      "birth": 487209600000,
       "gender": "M",
-      "blood": "A1",
-      "weight": "85",
-      "height": "180"
+      "blood": "AB0",
+      "weight": "75",
+      "height": "185"
     }
   ],
   "instructors": [
@@ -32,6 +32,15 @@
       "gender": "M",
       "services": "Musculação, Crosfitt",
       "created_at": 1593038948253
+    },
+    {
+      "id": 2,
+      "avatar_url": "https://images.unsplash.com/photo-1576678927484-cc907957088c?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=334&q=80",
+      "name": "Gilberto Medeiros",
+      "birth": 18662400000,
+      "gender": "M",
+      "services": "Musculação, Crosfitt",
+      "created_at": 1593207805586
     }
   ]
 }

@@ -7,23 +7,6 @@ exports.index = function(req, res) {
     res.render("members/index.njk", {members: data.members})
 }
 
-exports.show = function(req, res){
-    const { id } = req.params
-
-    const foundMembers = data.members.find(function(members){
-        return members.id == id
-    })
-
-    if(!foundMembers) return res.send("Members not found!")
-
-    const members = {
-        ...foundMembers,
-        age: age(foundMembers.birth)
-    }
-
-    res.render("members/show.njk", { members })
-}
-
 exports.create = function(req, res){
     res.render("members/create.njk")
 }
@@ -60,6 +43,24 @@ exports.post = function(req, res){
     })
 }
 
+exports.show = function(req, res){
+    const { id } = req.params
+
+    const foundMembers = data.members.find(function(members){
+        return members.id == id
+    })
+
+    if(!foundMembers) return res.send("Members not found!")
+
+    const members = {
+        ...foundMembers,
+        birthDay: date(foundMembers.birth).birthDay
+    }
+
+    res.render("members/show.njk", { members })
+}
+
+
 exports.edit = function(req, res){
     const { id } = req.params
 
@@ -71,7 +72,7 @@ exports.edit = function(req, res){
 
     const member = {
         ...foundMembers,
-        birth: date(foundMembers.birth)
+        birth: date(foundMembers.birth).iso
     }
 
     date(foundMembers.birth)

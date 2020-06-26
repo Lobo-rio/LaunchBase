@@ -26,4 +26,14 @@
         </section>
     </div>
 
+    <script>
+        const formDelete = document.querySelector('#form-delete')
+        formDelete.addEventListener('submit', function (e) {
+            const confirmation = confirm("Tem certeza que deseja deletar o registro?")
+            if (!confirmation) {
+                e.preventDefault
+            }
+        })
+    </script>
+
 {% endblock content %}

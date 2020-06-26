@@ -1,7 +1,7 @@
 .card {
     background-color: white;
     width: 800px;
-    height: 860px;
+    height: 870px;
 
     margin: 45px auto;
 
@@ -61,7 +61,7 @@
     font-size: 12px;
 }
 
-form input {
+form input, form select {
     width: 100%;
     outline: none;
     font-size: 18px;
