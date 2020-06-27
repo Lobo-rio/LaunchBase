@@ -8,12 +8,41 @@
 
     <section>
         <div class="container">
-            <h1>Gerenciar Receitas</h1>
-            <div class="cards">
-                <div class="card">
+            <div class="title">
+                <h1>Gerenciar Receitas</h1>
+                <a href="/admin/recipes/create">Nova</a>
+            </div>
 
-                </div>
+            <div class="cards">
+                {% for recipe in data.recipes %}
+                    <div class="card">
+                        <div class="card-left">
+                            <img src="{{ recipe.image_recipes }}" alt="Imagem da Receita {{ recipe.recipe }}">
+                        </div>
+                        <div class="card-right">
+                            <h2>{{ recipe.recipe }}</h2>
+                            <h4>{{ recipe.author }}</h4>
+                            <a href="/admin/recipes/{{recipe.id}}">Visualizar</a>
+                            
+                            <form id="form-delete" action="/admin/recipes?_method=DELETE" method="POST">
+                                <input type="hidden" name="id" value="{{recipe.id}}">
+                                <button>Deletar</button>
+                            </form>
+                        </div>
+                    </div>
+                {% endfor %}
+
             </div>
         </div>
     </section>
+
+    <script>
+        const formDelete = document.querySelector('#form-delete')
+        formDelete.addEventListener('submit', function (e) {
+            const confirmation = confirm("Tem certeza que deseja deletar o registro?")
+            if (!confirmation) {
+                e.preventDefault
+            }
+        })
+    </script>
 {% endblock main %}

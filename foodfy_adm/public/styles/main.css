@@ -2,6 +2,8 @@
 :root {
     --primary-color: #111111;
     --secundary-color: #6558C3;
+    --third-color: #777777;
+    --details-color: #444444;
 }
 
 * {
@@ -16,6 +18,6 @@ body {
 }
 
 section {
-    width: 1000px;
+    width: 940px;
     margin: 0 auto;
 }

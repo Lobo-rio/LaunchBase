@@ -6,14 +6,16 @@
 
 {% block main %}
     <section>
-        <form action="/admin/recipes" method="POST">
+        <form action="/admin/recipes?_method=PUT" method="POST">
             <div class="title">
-                <h1>Criando receita</h1>
-
+                <h1>Alterar receita</h1>
+              
+                
                 <button>Salvar receita</button>
+
             </div>
             {% include "partials/fields.njk" %}
-            
+            <input type="hidden" name="id" value="{{recipe.id}}">
         </form>
     </section>
 

@@ -5,14 +5,63 @@ section .title {
     align-items: center;
 }
 
-section .title h1 {
-    font-size: 24px;
+section .description .title {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+section .title h1,
+section .description .title h1 {
+    font-size: 36px;
     font-weight: bold;
-    line-height: 28px;
+    line-height: 42px;
     color: var(--primary-color);
 }
 
-section .title button {
+section .description h2 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    color: var(--primary-color);  
+    
+    margin: 16px 0 19px;
+}
+
+section .description h4 {
+    font-size: 20px;
+    font-weight: regular;
+    line-height: 24px;
+    color: var(--details-color);
+    margin-top: 4px;  
+}
+
+section .description .details ul {
+    list-style-type: square;
+    padding: 0 32px;
+}
+
+section .description .details ol {
+    list-style-type: upper-roman;
+    padding: 0 32px;
+}
+
+section .description .details  li,
+section .description .details p {
+    font-style: 18px;
+    font-weight: regular;
+    line-height: 28px;
+
+    color: var(--details-color);
+}
+
+section .description .details p {
+    margin-bottom: 36px;
+}
+
+section .title button,
+section .title a {
     width: 137px;
     height: 37px;
     background-color: var(--secundary-color);
@@ -26,6 +75,14 @@ section .title button {
     border-radius: 4px;
     border: 0;
     cursor: pointer;
+}
+
+section .title a {
+    text-decoration: none;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 section .description .item h2 {
@@ -71,4 +128,12 @@ section .description .item textarea {
     padding: 10px;
     border-radius: 4px;
     border: 0;
+}
+
+section .description img {
+    width: 940px;
+    height: 380px;
+    border-radius: 15px;
+
+    margin-bottom: 25px;
 }

@@ -2,9 +2,95 @@
     margin-top: 36px;
 }
 
-.container h1 {
+.container .title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    margin-bottom: 30px;
+}
+
+.container .title h1 {
     font-size: 24px;
     line-height: 28px;
     color: var(--primary-color);
     font-weight: bold;
+}
+
+.container .title a {
+    width: 120px;
+    height: 36px;
+
+    background-color: var(--secundary-color);
+    color: white;
+    border-radius: 4px;
+    border: 0;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .card h2 {
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 21px;
+    color: var(--primary-color);
+    margin-bottom: 5px;
+}
+
+.container .card h4,
+.container .card a {
+    font-size: 14px;
+    font-weight: 300;
+    line-height: 16px;
+}
+
+.container h4 {
+    color: var(--third-color);
+    margin-bottom: 5px;
+}
+.container a {
+    color: var(--secundary-color);
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+.container .cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px;
+}
+
+.container .cards .card {
+    display: flex;
+}
+
+.container .cards .card .card-left,
+.container .cards .card .card-right {
+    width: 50%;
+}
+
+.container .cards .card .card-right {
+   margin-left: 20px;
+}
+
+.container .cards .card .card-left img {
+    width: 100%;
+    border-radius: 8.57px;
+}
+
+form button {
+    width: 100px;
+    height: 36px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 18px;
+    color: white;
+
+    background-color: rgba(217, 30, 24, 1);
+    margin-top: 6px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
 }
