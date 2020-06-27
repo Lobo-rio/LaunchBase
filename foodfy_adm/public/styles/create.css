@@ -1,0 +1,74 @@
+section .title {
+    margin: 55px 0 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+section .title h1 {
+    font-size: 24px;
+    font-weight: bold;
+    line-height: 28px;
+    color: var(--primary-color);
+}
+
+section .title button {
+    width: 137px;
+    height: 37px;
+    background-color: var(--secundary-color);
+
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+
+    color: white;
+    border-bottom: 4px;
+    border-radius: 4px;
+    border: 0;
+    cursor: pointer;
+}
+
+section .description .item h2 {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    color: var(--primary-color);
+    margin-bottom: 8px;
+}
+
+section .description .item input {
+    width: 100%;
+    height: 39px;
+
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+    color: var(--primary-color);
+
+    padding: 8px;
+    border-radius: 4px;
+    margin-bottom: 6px;
+    border: 0;
+}
+
+section .description .item span {
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 19px;
+    color: var(--secundary-color);
+    margin-bottom: 10px;
+
+    display: inline-block;
+    cursor: pointer;
+}
+
+section .description .item textarea {
+    width: 100%;
+    font-size: 14px;
+    font-weight: normal;
+    line-height: 18px;
+
+    padding: 10px;
+    border-radius: 4px;
+    border: 0;
+}

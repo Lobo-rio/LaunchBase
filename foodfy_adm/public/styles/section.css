@@ -1,0 +1,10 @@
+.container {
+    margin-top: 36px;
+}
+
+.container h1 {
+    font-size: 24px;
+    line-height: 28px;
+    color: var(--primary-color);
+    font-weight: bold;
+}

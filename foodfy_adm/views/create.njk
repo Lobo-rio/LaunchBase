@@ -1,0 +1,48 @@
+{% extends "layout.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/create.css">
+{% endblock styles %}
+
+{% block main %}
+    <section>
+        <div class="title">
+            <h1>Criando receita</h1>
+            <form action="/create" method="POST">
+                <button>Salvar receita</button>
+            </form>
+        </div>
+        <div class="description">
+            <div class="item">
+                <h2>Imagem da receita</h2>
+                <input type="url" name="image_recipes" placeholder="http://">
+            </div>
+            <div class="item">
+                <h2>Ingredientes</h2>
+                <div id="ingredients">
+                    <div class="ingredient">
+                        <input type="text" name="ingredients[]" value="" placeholder="Ingredient"/>
+                    </div>
+                </div>
+                <span class="add-ingredient">Adicionar novo ingrediente</span>
+            </div>
+            <div class="item">
+                <h2>Modo de preparo</h2>
+                <div id="preparings">
+                    <div class="preparing">
+                        <input type="text" name="preparings[]" value="" placeholder="way of preparing"/>
+                    </div>
+                </div>
+                <span class="add-preparing">Adicionar novo ingrediente</span>
+            </div>
+            <div class="item">
+                <h2>Informações adicionais</h2>
+                <textarea name="additionalInformation" cols="30" rows="7" placeholder="Additional Information"></textarea>
+            </div>
+        </div>
+    </section>
+
+    {% block scripts %}
+        <script src="/scripts/index.js"></script>
+    {% endblock scripts %}
+{% endblock main %}
