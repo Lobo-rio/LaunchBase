@@ -75,7 +75,10 @@ Desafios para fortalecer alguns conceitos, entre eles:
 - **NodeJS**;
 - **Express**;
 - **Nodemon**;
-- **Nunjucks**.
+- **Nunjucks**;
+- **PostgreSQL**;
+- **CRUD**;
+- **Relacionamentos no SQL**.
 
 ## :memo: Licença
 
