@@ -8,7 +8,9 @@ module.exports = {
         })
     },
     create(req, res) {
-        res.render("members/create.njk")
+        Member.instructorSelectOptions(function(options){
+            res.render("members/create", {instructorOptions: options})
+        })
     },
     post(req, res) {
         const keys = Object.keys(req.body)
@@ -38,8 +40,10 @@ module.exports = {
             if(!member) return res.send("Member not found!")
 
             member.birth = date(member.birth).iso
-            
-            return res.render("members/edit", { member })
+
+            Member.instructorSelectOptions(function(options){
+                res.render("members/edit", {member, instructorOptions: options})
+            })
         })
     },
     put(req, res) {
