@@ -65,4 +65,18 @@ Desafios para fortalecer alguns conceitos, entre eles:
 
 ## :memo: Licença
 
+<h2>
+  Fase 03 (GYM - Controle de Academia)
+</h2>
+
+- **HTM5**;
+- **CSS3**;
+- **JavaScript**,
+- **NodeJS**;
+- **Express**;
+- **Nodemon**;
+- **Nunjucks**.
+
+## :memo: Licença
+
 Esse projeto está sob a licença MIT. Veja o arquivo [LICENSE](../LICENSE) para mais detalhes.
