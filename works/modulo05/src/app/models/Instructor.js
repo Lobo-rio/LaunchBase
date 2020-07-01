@@ -8,7 +8,8 @@ module.exports = {
         FROM instructors 
         LEFT JOIN members ON (instructors.id = members.instructor_id) 
         GROUP BY instructors.id 
-        ORDER BY total_students DESC`, function(err, results) {
+        ORDER BY total_students DESC`, 
+        function(err, results) {
             if(err) throw `All Database error! - ${err}`
             
             callback(results.rows)   
@@ -48,6 +49,21 @@ module.exports = {
             callback(results.rows[0])
         })
     },
+    findBy(filter, callback){
+        db.query(`
+        SELECT instructors.*, count(members) as total_students
+        FROM instructors 
+        LEFT JOIN members ON (instructors.id = members.instructor_id) 
+        WHERE instructors.name ILIKE '%${filter}%'
+        OR instructors.services ILIKE '%${filter}%'
+        GROUP BY instructors.id 
+        ORDER BY total_students DESC`, 
+        function(err, results) {
+            if(err) throw `All Database error! - ${err}`
+            
+            callback(results.rows)   
+        })
+    },
     put(data, callback){
         const query = `
             UPDATE instructors SET
@@ -81,6 +97,44 @@ module.exports = {
 
             return callback()
         })
+    },
+    paginate(params){
+        const { filter, limit, offset, callback } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `
+            (
+                SELECT count(*) FROM instructors
+            ) AS total
+            `
+
+        if ( filter ){
+            filterQuery = `
+            WHERE instructors.name ILIKE '%${filter}%'
+            OR instructors.services ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM instructors
+                ${filterQuery}
+            ) AS total`
+        }
+
+        query = `
+        SELECT instructors.*, ${totalQuery}, count(members) AS total_stundents 
+        FROM instructors
+        LEFT JOIN members ON (instructors.id = members.instructor_id)
+        ${filterQuery}
+        GROUP BY instructors.id LIMIT $1 OFFSET $2
+        `
+
+        db.query(query, [limit, offset], function(err, results) {
+            if(err) throw "Paginate Database error!"
+
+            callback(results.rows)
+        })
+
     }
 
 }
