@@ -32,7 +32,7 @@
                         {{ instructor.name }}
                     </td>
                     <td>{{ instructor.services }}</td>
-                    <td>{{ instructor.total_students }}</td>
+                    <td>{{ instructor.total }}</td>
                     <td><a href="/instructors/{{ instructor.id }}">Ver</a></td>
                 </tr>
                 {% endfor %}
@@ -41,6 +41,7 @@
         <div class="pagination"
             data-page={{pagination.page}}
             data-total={{pagination.total}}
+            data-filter={{filter}}
         ></div>
     </div>
 {% endblock content %}

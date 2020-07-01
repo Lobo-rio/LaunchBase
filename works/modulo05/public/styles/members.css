@@ -169,6 +169,56 @@ a.button {
     text-align: center;
 }
 
+.table-container .header {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    margin-bottom: 32px;
+}
+
+.table-container .header a {
+    margin: 0;
+    width: 120px;
+}
+
+.table-container .header form {
+    display: grid;
+    grid-template-columns: 1fr 120px;
+    align-items: center;
+    gap: 8px;
+}
+
+.table-container .header form input {
+    border: 1px solid #eee;
+    padding: 4px 8px;
+}
+
+.table-container .header form button {
+    margin: 0;
+}
+
+.pagination {
+    display: flex;
+    align-self: center;
+    justify-self: center;
+    margin-top: 32px;
+}
+
+.pagination a,
+.pagination span {
+    margin-right: 16px;
+}
+
+.pagination a {
+    text-decoration: none;
+    font-size: 16px;
+}
+
+.pagination a:hover {
+    filter: brightness(0.3);
+    border-bottom: 1px solid var(--primary-color);
+}
+
 @keyframes up {
     from {
         opacity: 0;
