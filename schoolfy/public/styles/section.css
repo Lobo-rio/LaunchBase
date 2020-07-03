@@ -1,4 +1,5 @@
-.main {
+.main,
+.main-create {
     width: 800px;
     height: auto;
     margin: 0 auto;
@@ -46,9 +47,238 @@
     font-weight: 500;
     line-height: 20px;
 
+    padding-left: 8px;
     border-radius: 4px;
     margin-right: 10px;
 }
 
+.main .main-table {
+    padding: 26px;
+}
 
+.main-table table {
+    width: 100%;
+}
+
+.main-table table thead {
+    padding: 4px;
+    background-color: var(--header-table);
+}
+
+.main-table table thead th {
+    height: 48px;
+    font-size: 16px;
+    font-weight: bold;
+    line-height: 20px;
+    text-transform: uppercase;
+
+    color: white;
+
+    text-align: left;
+    padding-left: 10px;
+}
+
+.main-table table tbody tr td {
+    height: 38px;
+    font-style: 14px;
+    font-weight: 700;
+    line-height: 18px;
+    color: var(--table-text);
+
+    padding-left: 10px;
+    border-bottom: 2px solid var(--header-table);
+}
+
+.main-table table tbody tr td:first-child {
+    display: flex;
+    align-items: center;
+}
+
+.main-table table tbody tr td:first-child img {
+    width: 34px;
+    height: 34px;
+
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.main-table table tbody tr td:last-child a {
+    width: 56px;
+    height: 28px;
+
+    display: inline-block;
+    color: white;
+    background-color: var(--header-table);
+    padding: 4px 0;
+    text-align: center;
+    
+    border-radius: 4px;
+}
+
+.main-table table tbody tr:hover {
+    color: white;
+    background-color: var(--header-table);
+}
+
+.main .main-paginate {
+    height: 56px;
+
+    background-color: blanchedalmond;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main .main-paginate a{
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 22px;
+
+    color: var(--table-text);
+    margin-right: 10px;
+}
+
+.main .main-paginate a:hover {
+    filter: brightness(0.3);
+}
+
+.main .main-paginate a:first-child,
+.main .main-paginate a:last-child {
+    width: 30px;
+    height: 22px;
+    text-align: center;
+    border-radius: 4px;
+    color: white;
+    background-color: var(--header-table);
+}
+
+.main .main-paginate a:hover:first-child,
+.main .main-paginate a:hover:last-child {
+    color: var(--header-table);
+    background-color: white;
+}
+
+.main-create {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 20px;
+}
+
+.main-create .create-avatar {
+    justify-self: center;
+    align-self: center;
+}
+.main-create .create-avatar img {
+    width: 220px;
+    height: 220px;
+
+    border-radius: 50%;
+    box-shadow: 3px 1px 6px -4px black;
+    border: 2px solid white;
+}
+
+.main-create .create-information {
+    background-color: var(--header-color);
+
+    border-left: 1px solid black;
+    padding: 20px;
+}
+
+.main-create .create-information h1 {
+    font-size: 32px;
+    font-weight: bold;
+    line-height: 36px;
+    color: white;
+    margin-bottom: 16px;
+}
+
+.main-create .create-information .group-item {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 16px
+}
+
+.main-create .create-information .group-item .item div:first-child {
+    font-size: 18px;
+    font-weight: 700;
+    line-height: 20px;
+    color: white;
+    margin-bottom: 8px;
+}
+
+.main-create .create-information .group-item .item input,
+.main-create .create-information .group-item .item select {
+    width: 220px;
+    height: 26px;
+
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 20px;
+    padding-left: 10px;
+
+    border-radius: 2px;
+    border: 0;
+    margin-bottom: 14px;
+}
+
+.main-create .create-information form button {
+    width: 160px;
+    height: 32px;
+    font-size: 18px;
+    font-weight: bold;
+    line-height: 30px;
+    color: white;
+
+    border-radius: 4px;
+    margin: 0 16px 16px 0;
+    border: 0;
+
+    cursor: pointer;
+}
+
+.main-create .create-information form button.save {
+    background-color: var(--section-color);
+}
+
+.main-create .create-information form button:hover.save {
+    color: var(--section-color);
+    background-color: white;
+}
+
+.main-create .create-information form button.delete {
+    background-color: var(--table-text);
+}
+
+.main-create .create-information form button:hover.delete {
+    color: var(--table-text);
+    background-color: white;
+}
+
+.main-create .create-information .item div:first-child {
+    font-size: 20px;
+    font-weight: 700;
+    line-height: 26px;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.main-create .create-information .item div + div {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 22px;
+    color: black;
+    margin-bottom: 10px;
+}
+
+.main-create .create-information .item div + div > span {
+    width: auto;
+    height: 28px;
+
+    padding: 2px 6px;
+    display: inline-block;
+    color: white;
+    background-color: var(--section-color);
+    border-radius: 4px;
+}
 

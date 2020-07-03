@@ -1,0 +1,46 @@
+{% extends "./layout.njk" %}
+
+
+{% block titlePage %}
+    <title>Create Teachers - SchoolFY</title>
+{% endblock titlePage %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/section.css">
+{% endblock styles %}
+
+{% block container %}
+
+    <div class="main-create">
+        <div class="create-avatar">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80" alt="IMGA">
+        </div>
+        <div class="create-information">
+            <h1>Dados do Professor(a)</h1>
+            <div class="item">
+                <div>Nome</div>
+                <div>Gilberto Medeiros</div>
+            </div>
+            <div class="item">
+                <div>Email</div>
+                <div>gsilvamedeiros@gmail.com</div>
+            </div>
+            <div class="item">
+                <div>Disciplinas</div>
+                <div><span>Matemática</span> <span>Potuguês</span> <span>Historia</span></div>
+            </div>
+            <div class="item">
+                <div>Experiência</div>
+                <div><span>10 Anos</span></div>
+            </div>
+            <div class="item">
+                <div>Cidade</div>
+                <div>Nova Iguaçu</div>
+            </div>
+            <div class="item">
+                <div>Estado</div>
+                <div>RJ</div>
+            </div>
+        </div>
+    </div>
+{% endblock container %}

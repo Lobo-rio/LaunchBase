@@ -6,10 +6,13 @@ const Router = express.Router()
 
 
 Router.get('/', function(req, res){
-    return res.redirect('/teacher')
+    return res.redirect('/teachers')
 })
-Router.get('/teacher', teachers.index)
+Router.get('/teachers', teachers.index)
+Router.get('/teachers/create', teachers.create)
+Router.get('/teachers/update', teachers.update)
+Router.get('/teachers/:id', teachers.show)
 
-Router.get('/teacher', students.index)
+Router.get('/students', students.index)
 
 module.exports = Router
