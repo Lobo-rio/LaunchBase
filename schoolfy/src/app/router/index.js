@@ -13,6 +13,8 @@ Router.get('/teachers/create', teachers.create)
 Router.get('/teachers/update', teachers.update)
 Router.get('/teachers/:id', teachers.show)
 
+Router.post('/teachers/create', teachers.post)
+
 Router.get('/students', students.index)
 
 module.exports = Router

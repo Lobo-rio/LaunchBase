@@ -13,17 +13,17 @@
 
     <div class="main-create">
         <div class="create-avatar">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80" alt="IMGA">
+            <img src="{{ teacher.avatar_url }}" alt="Image Teacher {{teacher.name}}">
         </div>
         <div class="create-information">
             <h1>Dados do Professor(a)</h1>
             <div class="item">
                 <div>Nome</div>
-                <div>Gilberto Medeiros</div>
+                <div>{{ teacher.name }}</div>
             </div>
             <div class="item">
                 <div>Email</div>
-                <div>gsilvamedeiros@gmail.com</div>
+                <div>{{ teacher.email }}</div>
             </div>
             <div class="item">
                 <div>Disciplinas</div>
@@ -31,15 +31,15 @@
             </div>
             <div class="item">
                 <div>Experiência</div>
-                <div><span>10 Anos</span></div>
+                <div><span>{{ teacher.experience }}</span></div>
             </div>
             <div class="item">
                 <div>Cidade</div>
-                <div>Nova Iguaçu</div>
+                <div>{{ teacher.city }}</div>
             </div>
             <div class="item">
                 <div>Estado</div>
-                <div>RJ</div>
+                <div>{{ teacher.uf }}</div>
             </div>
         </div>
     </div>

@@ -208,8 +208,8 @@
 }
 
 .main-create .create-information .group-item .item input,
+.main-create .create-information .avatar input,
 .main-create .create-information .group-item .item select {
-    width: 220px;
     height: 26px;
 
     font-size: 16px;
@@ -220,6 +220,15 @@
     border-radius: 2px;
     border: 0;
     margin-bottom: 14px;
+}
+
+.main-create .create-information .group-item .item input,
+.main-create .create-information .group-item .item select {
+    width: 220px;
+}
+
+.main-create .create-information .avatar input {
+    width: 460px;
 }
 
 .main-create .create-information form button {
@@ -255,7 +264,8 @@
     background-color: white;
 }
 
-.main-create .create-information .item div:first-child {
+.main-create .create-information .item div:first-child,
+.main-create .create-information .avatar div:first-child {
     font-size: 20px;
     font-weight: 700;
     line-height: 26px;
