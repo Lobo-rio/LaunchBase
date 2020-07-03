@@ -33,15 +33,18 @@ module.exports = {
             return callback(results.rows[0])
         })
     },
-    update(){
-        
+    update(query, data, callback){
+        db.query(query, data, function(err, results){
+            if (err) throw `Update Database error! => ${err}`
 
-        
+            return callback(results.rows[0])
+        })
     },
-    delete(){
+    delete(query, id, callback){
+        db.query(query, [id], function(err, results){
+            if(err) throw `Delete Database error! => ${err}`
 
-    },
-    readGroup(){
-
+            return callback()
+        })
     }
 }

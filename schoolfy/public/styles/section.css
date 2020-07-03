@@ -231,7 +231,14 @@
     width: 460px;
 }
 
-.main-create .create-information form button {
+.main-create .create-information .header-information {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.main-create .create-information form button,
+.main-create .create-information .header-information a {
     width: 160px;
     height: 32px;
     font-size: 18px;
@@ -248,6 +255,16 @@
 
 .main-create .create-information form button.save {
     background-color: var(--section-color);
+}
+
+.main-create .create-information .header-information a.save {
+    width: 64px;
+    background-color: var(--table-text);
+    margin-left: 22px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .main-create .create-information form button:hover.save {

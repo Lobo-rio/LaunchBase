@@ -14,61 +14,33 @@
             <a href="/teachers/create" class="button">Novo</a>
             <form action="/teachers">
                 <input type="text" name="filter" placeholder="Nome ou Matéria">
-                <button  class="button" type="submit">Filtrar</button>
+                <button class="button" type="submit">Filtrar</button>
             </form>
         </div>
         <div class="main-table">
             <table>
                 <thead>
                     <th>Name</th>
-                    <th>Matéria</th>
+                    <th>Email</th>
                     <th>Alunos</th>
                     <th>Ação</th>
                 </thead>
                 <tbody>
-                    <tr>
-                        <td>
-                            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80" alt="IMGA">
-                            Gilberto Medeiros
-                        </td>
-                        <td>Matemática</td>
-                        <td>10</td>
-                        <td>
-                            <a href="">Ver</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Amdreia Mattos</td>
-                        <td>Administração</td>
-                        <td>5</td>
-                        <td>
-                            <a href="">Ver</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Giullyan Raphael</td>
-                        <td>Informática</td>
-                        <td>4</td>
-                        <td>
-                            <a href="">Ver</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Lucas Patrick</td>
-                        <td>Filosofia</td>
-                        <td>7</td>
-                        <td>
-                            <a href="">Ver</a>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Bruno Mattos</td>
-                        <td>Educação Fisica</td>
-                        <td>8</td>
-                        <td>
-                            <a href="">Ver</a>
-                        </td>
-                    </tr>
+
+                    {% for teacher in teachers %}
+                        <tr>
+                            <td>
+                                <img src="{{ teacher.avatar_url }}" alt="Image Teacher {{ teacher.name }}">
+                                {{ teacher.name }}
+                            </td>
+                            <td>{{ teacher.email }}</td>
+                            <td>05</td>
+                            <td>
+                                <a href="/teachers/{{teacher.id}}">Ver</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    
                 </tbody>
             </table>
         </div>

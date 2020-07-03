@@ -2,7 +2,7 @@
 
 
 {% block titlePage %}
-    <title>Create Teachers - SchoolFY</title>
+    <title>Update Teachers - SchoolFY</title>
 {% endblock titlePage %}
 
 {% block styles %}
@@ -13,16 +13,17 @@
 
     <div class="main-create">
         <div class="create-avatar">
-            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80" alt="IMGA">
+            <img src="{{ teacher.avatar_url }}" alt="Image Teacher {{ teacher.mane }}">
         </div>
         <div class="create-information">
             <h1>Alterar Dados do Professor(a)</h1>
-            <form action="">
+            <form action="/teachers?_method=PUT" method="POST">
                 {% include "teachers/partials/fields.njk" %}
+                <input type="hidden" name="id" value="{{ teacher.id }}">
                 <button class="save" type="submit">Alterar</button>
             </form>
-            <form action="">
-                
+            <form action="/teachers?_method=DELETE" method="POST">
+                <input type="hidden" name="id" value="{{ teacher.id }}">
                 <button class="delete" type="submit">Excluir</button>
             </form>
         </div>

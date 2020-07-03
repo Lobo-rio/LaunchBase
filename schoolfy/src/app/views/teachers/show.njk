@@ -16,7 +16,11 @@
             <img src="{{ teacher.avatar_url }}" alt="Image Teacher {{teacher.name}}">
         </div>
         <div class="create-information">
-            <h1>Dados do Professor(a)</h1>
+            <div class="header-information">
+                <h1>Dados do Professor(a)</h1>
+                <a class="save" href="/teachers/update/{{teacher.id}}">Alterar</a>
+            </div>
+            
             <div class="item">
                 <div>Nome</div>
                 <div>{{ teacher.name }}</div>
@@ -31,7 +35,7 @@
             </div>
             <div class="item">
                 <div>Experiência</div>
-                <div><span>{{ teacher.experience }}</span></div>
+                <div><span>{{ teacher.serviceTime }} anos</span></div>
             </div>
             <div class="item">
                 <div>Cidade</div>

@@ -2,13 +2,13 @@
     <div class="item">
         <div>Nome</div>
         <div>
-            <input type="text" name="name">
+            <input type="text" name="name" value="{{ teacher.name }}">
         </div>
     </div>
     <div class="item">
         <div>Email</div>
         <div>
-            <input type="text" name="email">
+            <input type="email" name="email" value="{{ teacher.email }}">
         </div>
     </div>
 </div>
@@ -16,13 +16,13 @@
     <div class="item">
         <div>Diciplinas</div>
         <div>
-            <input type="text" name="discipline">
+            <input type="text" name="discipline" value="{{ teacher.discipline }}">
         </div>
     </div>
     <div class="item">
-        <div>Experência</div>
+        <div>Experiência</div>
         <div>
-            <input type="date" name="experience">
+            <input type="date" name="experience" value="{{ teacher.experience }}">
         </div>
     </div>
 </div>
@@ -55,6 +55,6 @@
         Foto do Professor(a)
     </div>
     <div>
-        <input type="text" name="avatar_url" placeholder="http://">
+        <input type="text" name="avatar_url" placeholder="http://" value="{{ teacher.avatar_url }}">
     </div>
 </div>
