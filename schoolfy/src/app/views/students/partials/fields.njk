@@ -1,0 +1,52 @@
+<div class="avatar">
+    <div>
+        Foto do(a) Aluno(a)
+    </div>
+    <div>
+        <input type="text" name="avatar_url" placeholder="http://" value="{{ student.avatar_url }}">
+    </div>
+</div>
+<div class="group-item">
+    <div class="item">
+        <div>Nome</div>
+        <div>
+            <input type="text" name="name" value="{{ student.name }}">
+        </div>
+    </div>
+    <div class="item">
+        <div>Email</div>
+        <div>
+            <input type="email" name="email" value="{{ student.email }}">
+        </div>
+    </div>
+</div>
+<div class="group-item">
+    <div class="item">
+        <div>Turma (Classe)</div>
+        <div>
+            <input type="text" name="class" value="{{ student.class }}">
+        </div>
+    </div>
+    <div class="item">
+        <div>Data de Nascimento</div>
+        <div>
+            <input type="date" name="age" value="{{ student.age }}">
+        </div>
+    </div>
+</div>
+<div class="group-item">
+    <div class="item">
+        <div>Professor(a)</div>
+        <div>
+            <select name="teacher_id">
+                <option value="">Selecione o(a) Professor(a)</option>
+                {% for teacher in teachers %}
+                    <option value="{{ teacher.id }}" 
+                    {% if student.teacher_id == teacher.id %}
+                        selected
+                    {% endif %}>{{ teacher.name }}</option>
+                {% endfor %}
+            </select>
+        </div>
+    </div>
+</div>

@@ -18,5 +18,12 @@ Router.put('/teachers', teachers.put)
 Router.delete('/teachers', teachers.delete)
 
 Router.get('/students', students.index)
+Router.get('/students/create', students.create)
+Router.get('/students/update/:id', students.update)
+Router.get('/students/:id', students.show)
+
+Router.post('/students', students.post)
+Router.put('/students', students.put)
+Router.delete('/students', students.delete)
 
 module.exports = Router

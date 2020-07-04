@@ -1,0 +1,46 @@
+{% extends "./layout.njk" %}
+
+
+{% block titlePage %}
+    <title>Create Students - SchoolFY</title>
+{% endblock titlePage %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/section.css">
+{% endblock styles %}
+
+{% block container %}
+
+    <div class="main-create">
+        <div class="create-avatar">
+            <img src="{{ student.avatar_url }}" alt="Image Student {{student.name}}">
+        </div>
+        <div class="create-information">
+            <div class="header-information">
+                <h1>Dados do(a) Aluno(a)</h1>
+                <a class="save" href="/students/update/{{student.id}}">Alterar</a>
+            </div>
+            
+            <div class="item">
+                <div>Nome</div>
+                <div>{{ student.name }}</div>
+            </div>
+            <div class="item">
+                <div>Email</div>
+                <div>{{ student.email }}</div>
+            </div>
+            <div class="item">
+                <div>Turma (Classe)</div>
+                <div><span>{{ student.class }}</span></div>
+            </div>
+            <div class="item">
+                <div>Aniversário</div>
+                <div>{{ student.age }} </div>
+            </div>
+            <div class="item">
+                <div>Professor(a)</div>
+                <div>{{ student.teacher_id }}</div>
+            </div>
+        </div>
+    </div>
+{% endblock container %}

@@ -1,0 +1,26 @@
+{% extends "./layout.njk" %}
+
+
+{% block titlePage %}
+    <title>Create Students - SchoolFY</title>
+{% endblock titlePage %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/section.css">
+{% endblock styles %}
+
+{% block container %}
+
+    <div class="main-create">
+        <div class="create-avatar">
+            <img src="https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=709&q=80" alt="IMGA">
+        </div>
+        <div class="create-information">
+            <h1>Salvar Dados do(a) Aluno(a)</h1>
+            <form action="/students" method="POST">
+                {% include "students/partials/fields.njk" %}
+                <button class="save" type="submit">Salvar</button>
+            </form>
+        </div>
+    </div>
+{% endblock container %}

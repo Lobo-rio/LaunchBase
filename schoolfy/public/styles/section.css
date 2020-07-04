@@ -115,6 +115,11 @@
     border-radius: 4px;
 }
 
+.main-table table tbody tr td:last-child a:hover {
+    color: var(--header-table);
+    background-color: white;
+}
+
 .main-table table tbody tr:hover {
     color: white;
     background-color: var(--header-table);

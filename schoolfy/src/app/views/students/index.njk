@@ -1,0 +1,58 @@
+{% extends "./layout.njk" %}
+
+{% block titlePage %}
+    <title>Students - SchoolFY</title>
+{% endblock titlePage %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/section.css">
+{% endblock styles %}
+
+{% block container %}
+    <div class="main">
+        <div class="main-header">
+            <a href="/students/create" class="button">Novo</a>
+            <form action="/students">
+                <input type="text" name="filter" placeholder="Nome ou Turma">
+                <button class="button" type="submit">Filtrar</button>
+            </form>
+        </div>
+        <div class="main-table">
+            <table>
+                <thead>
+                    <th>Nome</th>
+                    <th>Email</th>
+                    <th>Turma</th>
+                    <th>Ação</th>
+                </thead>
+                <tbody>
+
+                    {% for student in students %}
+                        <tr>
+                            <td>
+                                <img src="{{ student.avatar_url }}" alt="Image Teacher {{ student.name }}">
+                                {{ student.name }}
+                            </td>
+                            <td>{{ student.email }}</td>
+                            <td>{{ student.class }}</td>
+                            <td>
+                                <a href="/students/{{student.id}}">Ver</a>
+                            </td>
+                        </tr>
+                    {% endfor %}
+                    
+                </tbody>
+            </table>
+        </div>
+        <div class="main-paginate">
+            <a href="#">1</a>
+            <a href="#">2</a>
+            <a href="#">3</a>
+            <a href="#">4</a>
+            <a href="#">5</a>
+            <a href="#">6</a>
+            <a href="#">7</a>
+        </div>
+
+    </div>
+{% endblock container %}
