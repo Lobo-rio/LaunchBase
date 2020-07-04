@@ -46,5 +46,74 @@ module.exports = {
 
             return callback()
         })
+    },
+    paginate(params){
+        const { 
+            countTable, 
+            table, 
+            ids, 
+            fields, 
+            leftJoin, 
+            groupBy, 
+            filter, 
+            limit, 
+            offset, 
+            callback 
+        } = params
+
+        let query = "",
+            filterQuery = "",
+            totalQuery = `
+            (SELECT count(*) FROM ${table[0]}) AS total
+            `
+
+        if ( filter ){
+            filterQuery = `
+            WHERE ${table[0]}.${fields[0]} ILIKE '%${filter}%'
+            OR ${table[0]}.${fields[1]} ILIKE '%${filter}%'
+            `
+
+            totalQuery = `(
+                SELECT count(*) FROM ${table[0]}
+                ${filterQuery}
+            ) AS total`
+        }
+
+
+        if (countTable){
+            query += `
+                SELECT ${table[0]}.*, ${totalQuery}, count(${table[1]}) AS total_${table[1]} 
+                FROM ${table[0]}
+            `
+        } else {
+            query += `
+                SELECT ${table[0]}.*, ${totalQuery} 
+                FROM ${table[0]}
+            `
+        }
+
+        if (leftJoin) {
+            query += `
+            LEFT JOIN students ON (${table[0]}.${ids[0]} = ${table[1]}.${ids[1]}) 
+            `
+        }
+
+        query += `${filterQuery}`
+        
+        if (groupBy){
+            query += `
+                GROUP BY ${table[0]}.${ids[0]} LIMIT $1 OFFSET $2
+            `
+        }else{
+            query += `
+                LIMIT $1 OFFSET $2
+            `
+        }
+        
+        db.query(query, [limit, offset], function(err, results) {
+            if(err) throw `Paginate Database error! => ${err}`
+
+            callback(results.rows)
+        })
     }
 }

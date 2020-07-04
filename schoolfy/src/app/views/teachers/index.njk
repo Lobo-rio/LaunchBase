@@ -13,7 +13,7 @@
         <div class="main-header">
             <a href="/teachers/create" class="button">Novo</a>
             <form action="/teachers">
-                <input type="text" name="filter" placeholder="Nome ou Matéria">
+                <input type="text" name="filter" placeholder="Nome ou Email">
                 <button class="button" type="submit">Filtrar</button>
             </form>
         </div>
@@ -34,25 +34,26 @@
                                 {{ teacher.name }}
                             </td>
                             <td>{{ teacher.email }}</td>
-                            <td>05</td>
+                            <td>{{ teacher.total_students }}</td>
                             <td>
                                 <a href="/teachers/{{teacher.id}}">Ver</a>
                             </td>
                         </tr>
                     {% endfor %}
-                    
+
                 </tbody>
             </table>
         </div>
         <div class="main-paginate">
-            <a href="#">1</a>
-            <a href="#">2</a>
-            <a href="#">3</a>
-            <a href="#">4</a>
-            <a href="#">5</a>
-            <a href="#">6</a>
-            <a href="#">7</a>
+            <div class="pagination"
+                data-page={{pagination.page}}
+                data-total={{pagination.total}}
+                data-filter={{filter}}
+            ></div>
         </div>
 
     </div>
+    {% block scripts %}
+        <script src="/scripts/index.js"></script>
+    {% endblock scripts %}
 {% endblock container %}

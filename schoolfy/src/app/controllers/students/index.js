@@ -3,13 +3,49 @@ const options = require('../../models/index')
 
 module.exports = {
     index(req, res){
-        const table = 'students'
+        let countTable = false, 
+            table = ['students'],
+            ids = ['id'],
+            fields = ['name', 'class'],
+            leftJoin = false,
+            groupBy = false
+        let { filter, page, limit } = req.query
+
+        page = page || 1
+        limit = limit || 2
+        let offset = (limit * (page - 1))
+        
+        const params = {
+            countTable,
+            table,
+            ids,
+            fields,
+            leftJoin,
+            groupBy,
+            filter,
+            page,
+            limit,
+            offset,
+            callback(students) {
+                const pagination = {
+                    total: Math.ceil(students[0].total / limit),
+                    page
+                }
+
+                return res.render("students/index", { students, pagination, filter })
+            }
+        }
+
+        options.paginate(params)
+
+
+        /*const table = 'students'
         const fields = '*'
         const condition = 'ORDER BY name'
 
         options.all(table, fields, condition, function(students){
             return res.render('students/index', { students })
-        })
+        })*/
     },
     create(req, res) {
         const table = 'teachers'

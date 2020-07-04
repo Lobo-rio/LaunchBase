@@ -142,6 +142,7 @@
 
     color: var(--table-text);
     margin-right: 10px;
+    display: inline-block;
 }
 
 .main .main-paginate a:hover {
