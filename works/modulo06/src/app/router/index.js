@@ -8,6 +8,9 @@ Router.get("/", function(req, res){
     res.render("layout.njk")
 })
 Router.get("/products/create", products.create)
+Router.post("/products", products.post)
+
+
 Router.get("/ads/create", function(req, res){
     res.redirect("/products/create")
 })
