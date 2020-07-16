@@ -1,0 +1,75 @@
+header, footer {
+    width: 100%;
+    background-color: var(--primary-color);
+    color: white;
+
+    padding: 36px 0;
+    text-align: center;
+}
+
+header div.container {
+    display: grid;
+    grid-template-columns: 380px auto 380px;
+    align-items: center;
+    grid-gap: 24px;
+}
+
+header div.container a {
+    justify-self: start;
+}
+
+footer {
+    font-size: 18px;
+    line-height: 26px;
+    letter-spacing: 3px;
+}
+
+footer span {
+    color: var(--secondary-color);
+    font-size: 24px;
+    font-weight: bold;
+    letter-spacing: -2px;
+}
+
+.logo h1 {
+    font-size: 38px;
+    line-height: 48px;
+    letter-spacing: -2px;
+}
+
+.logo h3 {
+    color: var(--secondary-color);
+    font-size: 18px;
+    line-height: 24px;
+    letter-spacing: 1px;
+}
+
+form.search input {
+    width: 100%;
+    font-size: 14px;
+    line-height: 20px;
+    color: #2c3e50;
+    border-radius: 4px;
+    padding: 6px 12px;
+}
+
+nav.primary ul {
+    display: flex;
+    justify-content: space-between;
+}
+
+nav.primary ul li a {
+    display: flex;
+    align-items: center;
+
+    color: white;
+    transition: 200ms;
+}
+
+nav.primary ul li a:hover {
+    color: var(--secondary-color);
+}
+
+nav.primary ul li a i {
+    margin-right: 8px;
+}
