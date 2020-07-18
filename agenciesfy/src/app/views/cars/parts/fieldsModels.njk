@@ -1,12 +1,41 @@
-<div class="item">
-    <div>Nome</div>
-    <div>
-        <input type="text" name="name">
+<div class="group-item">
+    <div class="item">
+        <div>Cor</div>
+        <div>
+            <input type="text" name="color">
+        </div>
+    </div>
+    <div class="item">
+        <div>Motorização</div>
+        <div>
+            <input type="text" name="motorization">
+        </div>
+    </div>
+</div>
+<div class="group-item">
+    <div class="item">
+        <div>Qtde de Portas</div>
+        <div>
+            <input type="text" name="doors">
+        </div>
+    </div>
+    <div class="item">
+        <div>Automático ?</div>
+        <div>
+            <span>
+                <input type="radio" name="automatic" value="1">
+                Sim
+            </span>
+            <span>
+                <input type="radio" name="automatic" value="0">
+                Não
+            </span>
+        </div>
     </div>
 </div>
 <div class="item">
-    <div>CNPJ</div>
+    <div>Descrição do Modelo</div>
     <div>
-        <input type="text" name="cnpj" value="{{ agency.cnpj }}">
+        <textarea name="description"></textarea>
     </div>
 </div>

@@ -55,6 +55,7 @@ form .item > div:nth-child(1) {
 
 form .item input[type="text"],
 form .item input[type="number"],
+form .item input[type="date"],
 form .item textarea,
 form .item select {
     width: 100%;
@@ -106,7 +107,7 @@ section.table table td, th {
     font-size: 14px;
     font-weight: bold;
     line-height: 20px;
-    
+        
     letter-spacing: .7px;
     text-transform: uppercase;
 
@@ -121,7 +122,7 @@ section.table table th {
 
 section.table table td,
 section.table table td:last-child a {
-    color: var(--primary-color);
+    color: var(--text-color);
 }
   
 section.table table tr:nth-child(even) {

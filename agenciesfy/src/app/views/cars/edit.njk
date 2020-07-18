@@ -1,0 +1,44 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+    <title>Modelos Carros - AgenciesFy</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/contents.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section class="container form">
+        <form action="/cars?_method=PUT" method="post">
+
+            <div class="header">
+                <h3>Alterar Cadastro Carros</h3>
+            </div>
+            <div class="fields">
+                {% include "cars/parts/fields.njk" %}
+            </div>
+            <input type="hidden" name="id" value="{{car.id}}">
+
+            <button class="button update">Alterar</button>
+        </form>
+        <form id="form-delete" action="/cars?_method=DELETE" method="POST">
+            <input type="hidden" name="id" value="{{ car.id }}">
+            <button class="button delete" type="submit">Deletar</button>
+        </form>
+    </section>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script>
+        const formDelete = document.querySelector('#form-delete')
+        formDelete.addEventListener('submit', function (e) {
+            const confirmation = confirm("Tem certeza que deseja deletar o registro?")
+            if (!confirmation) {
+                e.preventDefault
+            }
+        })
+    </script>
+{% endblock scripts %}

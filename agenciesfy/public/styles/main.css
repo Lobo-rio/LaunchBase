@@ -54,9 +54,19 @@ html, body {
 }
 
 .button.update {
+    width: 100%;
     background-color: var(--primary-color);
+}
+.button.update:hover {
+    width: 100%;
+    background-color: #2980b9;
 }
 
 .button.delete {
-    background-color: var(--primary-color);
+    width: 100%;
+    background-color: #e74c3c;
+}
+.button.delete:hover {
+    width: 100%;
+    background-color: #c0392b;
 }

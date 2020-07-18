@@ -1,12 +1,26 @@
 <div class="item">
-    <div>Nome</div>
+    <div>Descrição do Modelo</div>
     <div>
-        <input type="text" name="name">
+        <select name="models_id">
+            {% for model in models %}
+                {% if (car.models_id == model.id) %}
+                    <option value="{{model.id}}" selected>{{model.color}} - {{model.motorization}}</option>
+                {% else %}
+                    <option value="{{model.id}}">{{model.color}} - {{model.motorization}}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
     </div>
 </div>
 <div class="item">
-    <div>CNPJ</div>
+    <div>Nome/Fabricante</div>
     <div>
-        <input type="text" name="cnpj" value="{{ agency.cnpj }}">
+        <input type="text" name="name" value="{{car.name}}">
+    </div>
+</div>
+<div class="item">
+    <div>Placa</div>
+    <div>
+        <input type="text" name="plate" value="{{car.plate}}">
     </div>
 </div>

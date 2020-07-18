@@ -1,0 +1,38 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+    <title>Cadastro Clientes - AgenciesFy</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/contents.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section class="container table">
+        <table>
+            <tr>
+                <th>#id</th>
+                <th>Nome</th>
+                <th>CPF</th>
+                <th>Telefone</th>
+                <th>Ações</th>
+            </tr>
+            {% for client in customers %}
+            <tr>
+                <td>{{client.id}}</td>
+                <td>{{client.name}}</td>
+                <td>{{client.cpf}}</td>
+                <td>{{client.phone}}</td>
+                <td>
+                    <a href="/customers/{{client.id}}/edit" class="material-icons">save</a>
+                    <a href="/customers/{{client.id}}/edit" class="material-icons">cancel</a>
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </table>
+    </section>
+
+{% endblock content %}
