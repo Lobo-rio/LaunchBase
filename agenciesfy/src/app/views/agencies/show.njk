@@ -10,22 +10,28 @@
 
 {% block content %}
 
-    <section class="container form">
-
-        <form action="/agencies" method="post">
-
-            <div class="header">
-                <h3>Cadastrar Agência</h3>
-                <button class="button update">Salvar Endereço</button>
-                
-            </div>
-
-            <div class="fields">
-                {% include "agencies/parts/fields.njk" %}
-            </div>
-
-            <button class="button save">Salvar</button>
-        </form>
+    <section class="container table">
+        <table>
+            <tr>
+                <th>#id</th>
+                <th>Razão Social</th>
+                <th>CNPJ</th>
+                <th>Ações</th>
+            </tr>
+            {% for agency in agencies %}
+            <tr>
+                <td>{{agency.id}}</td>
+                <td>{{agency.name}}</td>
+                <td>{{agency.cnpj}}</td>
+                <td>
+                    <a href="/agencies/{{agency.id}}/edit" class="material-icons">save</a>
+                    <a href="/agencies/{{agency.id}}/delete" class="material-icons">cancel</a>
+                    <a href="/agencies/address" class="material-icons">business</a>
+                </td>
+            </tr>
+            {% endfor %}
+            
+        </table>
     </section>
 
 {% endblock content %}

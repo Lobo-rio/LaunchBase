@@ -1,0 +1,30 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+    <title>Cadastrar - AgenciesFy</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/contents.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section class="container form">
+        <form action="/agencies" method="post">
+
+            <div class="header">
+                <h3>Cadastrar Agência</h3>
+                {% if (agency.id) %}
+                    <button class="button update">Salvar Endereço</button>
+                {% endif %}
+            </div>
+            <div class="fields">
+                {% include "agencies/parts/fields.njk" %}
+            </div>
+
+            <button class="button save">Salvar</button>
+        </form>
+    </section>
+
+{% endblock content %}

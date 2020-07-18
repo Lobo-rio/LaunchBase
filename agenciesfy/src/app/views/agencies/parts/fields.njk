@@ -1,18 +1,22 @@
 <div class="item">
     <div>Razão Social</div>
     <div>
-        <input type="text" name="name" value="{{ agency.name }}">
+        <input type="text" name="name">
     </div>
 </div>
 <div class="item">
     <div>CNPJ</div>
     <div>
-        <input type="text" name="cnpj" value="{{ agency.cnpj }}">
+        <input type="text" name="cnpj">
     </div>
 </div>
 <div class="item">
-    <div>Inscrição Estadual</div>
+    <div>Endereço</div>
     <div>
-        <input type="text" name="insc_est" value="{{ agency.insc_est }}">
+        <select name="address_id">
+            {% for address in addresses %}
+            <option value="{{address.id}}">{{address.street}}-{{address.number}}</option>
+            {% endfor %}
+        </select>
     </div>
 </div>

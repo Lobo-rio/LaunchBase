@@ -1,0 +1,55 @@
+{% extends "layout.njk" %}
+
+{% block title %}
+    <title>Modelos Carros - AgenciesFy</title>
+{% endblock title %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/contents.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section class="container molds-cars">
+        <div class="header">
+            <h1>Modelos dos carros para aluguel</h1>
+        </div>
+
+        <div class="cards">
+            <div class="card">
+                <img 
+                    src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80" 
+                    alt="Carro Modelo">
+                <h3>Titulo do carro</h3>
+                <p>Pequena descrição do carro</p>
+                <h5>Motorização: 1.6 Turbo Power</h5>
+                <h5>Cor: Vermelho Vivo</h5>
+                <div class="footer">
+                    <a class="button update" href="/cars/{{car.id}}/edit">Editar</a>
+                </div>
+            </div>
+            <div class="card">
+                <img 
+                    src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80" 
+                    alt="Carro Modelo">
+            </div>
+            <div class="card">
+                <img 
+                    src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80" 
+                    alt="Carro Modelo">
+            </div>
+            <div class="card">
+                <img 
+                    src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80" 
+                    alt="Carro Modelo">
+            </div>
+            <div class="card">
+                <img 
+                    src="https://images.unsplash.com/photo-1550355291-bbee04a92027?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=376&q=80" 
+                    alt="Carro Modelo">
+            </div>
+        </div>
+        
+    </section>
+
+{% endblock content %}
