@@ -71,7 +71,7 @@ const photosUpload = {
     getAllFiles() {
         const dataTransfer = new ClipboardEvent("").clipboardData || new DataTransfer()
 
-        photosUpload.files.forEach(file => dataTransfer.itens.add(file))
+        photosUpload.files.forEach(file => dataTransfer.items.add(file))
 
         return dataTransfer.files
     },
@@ -88,6 +88,18 @@ const photosUpload = {
 
         photosUpload.files.splice(index, 1)
         photosUpload.input.files = photosUpload.getAllFiles()
+
+        photoDiv.remove()
+    },
+    removeOldPhoto(event){
+        const photoDiv = event.target.parentNode
+
+        if(photoDiv.id){
+            const removedFiles = document.querySelector('input[name="removed_files"')
+            if (removedFiles){
+                removedFiles.value += `${photoDiv.id},`
+            }
+        }
 
         photoDiv.remove()
     }

@@ -1,5 +1,6 @@
 const express = require('express')
 const products = require('../controllers/products/index')
+const multer = require('../middlewares/multer')
 
 const Router = express.Router();
 
@@ -8,9 +9,12 @@ Router.get("/", function(req, res){
     res.render("layout.njk")
 })
 Router.get("/products/create", products.create)
+Router.get('/products/:id', products.show)
 Router.get("/products/:id/edit", products.edit)
-Router.post("/products", products.post)
-Router.put("/products", products.put)
+
+Router.post("/products", multer.array("photos", 6), products.post)
+Router.put("/products", multer.array("photos", 6), products.put)
+
 Router.delete("/products", products.delete)
 
 

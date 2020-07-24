@@ -1,16 +1,20 @@
 const db = require('../../config/db')
+const fs = require('fs')
 
 module.exports = {
-    all(params){
+    all(params) {
         return db.query(`
             SELECT * from ${params[0]}
         `)
     },
-    findBy(params){
+    findBy(params) {
         return db.query(`SELECT * FROM ${params[1]} WHERE id = $1`, [params[0]])
     },
-    save(params){
-        
+    findByAll(params) {
+        return db.query(`SELECT * FROM ${params[2]} WHERE ${params[1]} = $1`, [params[0]])
+    },
+    save(params) {
+
         const query = `
             INSERT INTO ${params[0]} (
                 category_id,
@@ -38,7 +42,25 @@ module.exports = {
 
         return db.query(query, values)
     },
-    update(params){
+    filesCreate({ filename, path, product_id }) {
+        const query = `
+            INSERT INTO files (
+                name,
+                path,
+                product_id
+            ) VALUES ($1, $2, $3)
+            RETURNING id
+        `
+
+        const values = [
+            filename,
+            path,
+            product_id
+        ]
+
+        return db.query(query, values)
+    },
+    update(params) {
         const query = `
             UPDATE ${params[0]} SET
                 category_id = ($1),
@@ -66,7 +88,17 @@ module.exports = {
 
         return db.query(query, values)
     },
-    delete(params){
-        return db.query(`DELETE FROM ${params[1]} WHERE id = $1`, [params[0]])
+    async delete(params) {
+
+        try {
+            const result = await db.query(`SELECT * FROM ${params[1]} WHERE id = $1`, [params[0]])
+            const file = result.rows[0]
+
+            fs.unlinkSync(file.path)
+            return db.query(`DELETE FROM ${params[1]} WHERE id = $1`, [params[0]])
+        } catch (error) {
+            console.error(error)
+        }
+        
     }
 }
