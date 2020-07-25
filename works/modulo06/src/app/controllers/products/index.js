@@ -22,7 +22,18 @@ module.exports = {
         product.old_price = formatPrice(product.old_price)
         product.price = formatPrice(product.price)
 
-        res.render("products/show.njk", { product })
+        table = 'files'
+        idItems = 'product_id'
+        params = [id, idItems, table]
+
+        results = await optionsDb.findByAll(params)
+        let files = results.rows
+        files = files.map(file => ({
+            ...file,
+            src: `${req.protocol}://${req.headers.host}${file.path.replace("public","")}`
+        }))
+
+        res.render("products/show.njk", { product, files })
     },
     create(req, res){
         let table = 'categories'

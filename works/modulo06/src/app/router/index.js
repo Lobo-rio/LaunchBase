@@ -1,4 +1,5 @@
 const express = require('express')
+const home = require('../controllers/home/index')
 const products = require('../controllers/products/index')
 const multer = require('../middlewares/multer')
 
@@ -6,7 +7,7 @@ const Router = express.Router();
 
 
 Router.get("/", function(req, res){
-    res.render("layout.njk")
+    res.render("home/index.njk", home.index)
 })
 Router.get("/products/create", products.create)
 Router.get('/products/:id', products.show)

@@ -4,7 +4,7 @@ const fs = require('fs')
 module.exports = {
     all(params) {
         return db.query(`
-            SELECT * from ${params[0]}
+            SELECT * from ${params[0]} ${params[1]}
         `)
     },
     findBy(params) {
