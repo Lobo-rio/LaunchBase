@@ -6,9 +6,8 @@ const multer = require('../middlewares/multer')
 const Router = express.Router();
 
 
-Router.get("/", function(req, res){
-    res.render("home/index.njk", home.index)
-})
+Router.get("/", home.index)
+
 Router.get("/products/create", products.create)
 Router.get('/products/:id', products.show)
 Router.get("/products/:id/edit", products.edit)
