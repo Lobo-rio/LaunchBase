@@ -3,9 +3,12 @@ const { formatPrice, date } = require('../../../lib/utils')
 
 module.exports = {
     async show(req, res){
+        let params = {}
         const id = req.params.id
         let table = 'products'
-        let params = [ id, table ]
+
+        params.id = id
+        params.table = table
 
         let results = await optionsDb.findBy(params)
         const product = results.rows[0]
@@ -22,9 +25,13 @@ module.exports = {
         product.old_price = formatPrice(product.old_price)
         product.price = formatPrice(product.price)
 
+        params = {}
         table = 'files'
         idItems = 'product_id'
-        params = [id, idItems, table]
+        
+        params.id = id
+        params.idItems = idItems
+        params.table = table
 
         results = await optionsDb.findByAll(params)
         let files = results.rows
@@ -36,10 +43,12 @@ module.exports = {
         res.render("products/show.njk", { product, files })
     },
     create(req, res){
-        let table = 'categories'
-        let params = [
-            table
-        ]
+        let params = {},
+            table = 'categories',
+            options = ''
+
+        params.table = table
+        params.options = options
 
         optionsDb.all(params)
             .then(
@@ -50,10 +59,15 @@ module.exports = {
             )
     },
     async edit(req, res){
+        let params = {},
+            table = 'products',
+            options = '',
+            idItems = ''
         const id = req.params.id
-        let table = 'products'
-        let params = [ id, table ]
-
+        
+        params.id = id
+        params.table = table
+        
         let results = await optionsDb.findBy(params)
         const product = results.rows[0]
         
@@ -62,15 +76,22 @@ module.exports = {
         product.old_price = formatPrice(product.old_price)
         product.price = formatPrice(product.price)
 
+        params = {}
         table = 'categories'
-        params = [ table ]
+        
+        params.table = table
+        params.options = options
 
         results = await optionsDb.all(params)
         const categories = results.rows
 
+        params = {}
         table = 'files'
         idItems = 'product_id'
-        params = [id, idItems, table]
+        
+        params.id = id
+        params.idItems = idItems
+        params.table = table
 
         results = await optionsDb.findByAll(params)
         let files = results.rows

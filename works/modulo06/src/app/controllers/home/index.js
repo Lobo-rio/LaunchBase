@@ -3,20 +3,26 @@ const { formatPrice, date } = require('../../../lib/utils')
 
 module.exports = {
     async index(req, res) {
+        let params = {}
         const table = 'products'
         const options = 'ORDER BY updated_at DESC'
 
-        const params = [table, options]
-
+        params.table = table
+        params.options = options
+        
         let results = await optionsDb.all(params)
         const products = results.rows
 
         if (!products) return res.send('Products not founds!')
 
         async function getImage(productId) {
+            let params = {}
             const table = 'files'
             const idItems = 'product_id'
-            const params = [productId, idItems, table]
+            
+            params.id = productId
+            params.idItems = idItems
+            params.table = table
 
             let results = await optionsDb.findByAll(params)
             const files = results.rows.map(file => `${req.protocol}://${req.headers.host}${file.path.replace("public", "")}`)
