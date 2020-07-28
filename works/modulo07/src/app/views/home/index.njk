@@ -1,0 +1,13 @@
+{% extends "layout.njk" %}
+{% import "parts/section-products.njk" as section%}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/home.css">
+{% endblock styles %}
+   
+
+{% block content %}
+
+{{section.Products('Últimos Produtos', 'container', products)}}
+
+{% endblock content %}
