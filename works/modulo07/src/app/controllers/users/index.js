@@ -8,7 +8,11 @@ module.exports = {
     show(req, res) {
 
     },
-    post(req, res) {
+    async post(req, res) {
+        
+
+        return res.send('Passed!')
+
 
     },
     update(req, res) {

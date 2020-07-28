@@ -197,5 +197,35 @@ const Validate = {
         const errorDiv = input.parentNode.querySelector(".error")
 
         if (errorDiv) errorDiv.remove()
+    },
+    isCpfCnpj(value){
+        let error = null
+
+        const cleanValues = value.replace(/\D/g, "")
+
+        if (cleanValues.length > 11 && cleanValues.length !== 14) {
+            error = "CNPJ incorreto!"
+        } else if (cleanValues.length < 12 && cleanValues.length !== 11) {
+            error = "CPF incorreto!"
+        }
+
+        return {
+            error,
+            value
+        }
+    },
+    isCep(value) {
+        let error = null
+
+        const cleanValues = value.replace(/\D/g, "")
+
+        if (cleanValues.length !== 8) {
+            error = "CEP incorreto!"
+        }
+
+        return {
+            error,
+            value
+        }
     }
 }

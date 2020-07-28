@@ -1,6 +1,7 @@
 const express = require('express')
 const users = require('../controllers/users/index')
 const session = require('../controllers/session/index')
+const validators = require('../validators/index')
 
 const Router = express.Router();
 
@@ -14,7 +15,7 @@ Router.post('/forgot-password', session.forgot)
 Router.post('/password-reset', session.reset)
 
 Router.get('/register', users.formRegister)
-Router.post('/register', users.post)
+Router.post('/register', validators.post, users.post)
 
 Router.get('/', users.show)
 Router.put('/', users.update)

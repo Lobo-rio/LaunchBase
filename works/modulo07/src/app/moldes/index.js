@@ -16,6 +16,22 @@ module.exports = {
         const {id, idItems, table} = params
         return db.query(`SELECT * FROM ${table} WHERE ${idItems} = $1`, [id])
     },
+    async findOne(table, filters){
+        let query = `SELECT * FROM ${table}`
+
+        Object.keys(filters).map(key => {
+            query = `${query}
+            ${key}
+            `
+
+            Object.keys(filters[key]).map(field => {
+                query = `${query} ${field} = '${filters[key][field]}'`
+            })
+        })
+
+        const results = await db.query(query)
+        return results.rows[0]
+    },
     save(params) {
 
         const query = `
