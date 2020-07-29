@@ -15,7 +15,7 @@ Router.post('/forgot-password', session.forgot)
 Router.post('/password-reset', session.reset)
 
 Router.get('/register', users.formRegister)
-Router.post('/register', validators.post, users.post)
+Router.post('/register', validators.post, users.create)
 
 Router.get('/', users.show)
 Router.put('/', users.update)

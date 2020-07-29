@@ -9,14 +9,14 @@ module.exports = {
         `)
     },
     findBy(params) {
-        const {id, table} = params
+        const { id, table } = params
         return db.query(`SELECT * FROM ${table} WHERE id = $1`, [id])
     },
     findByAll(params) {
-        const {id, idItems, table} = params
+        const { id, idItems, table } = params
         return db.query(`SELECT * FROM ${table} WHERE ${idItems} = $1`, [id])
     },
-    async findOne(table, filters){
+    async findOne(table, filters) {
         let query = `SELECT * FROM ${table}`
 
         Object.keys(filters).map(key => {
@@ -32,34 +32,16 @@ module.exports = {
         const results = await db.query(query)
         return results.rows[0]
     },
-    save(params) {
+    async save(params) {
+
+        const { fields, values, data } = params
 
         const query = `
-            INSERT INTO ${params[0]} (
-                category_id,
-                user_id,
-                name,
-                description,
-                old_price,
-                price,
-                quantity,
-                status
-            ) VALUES ($1, $2, $3, $4, $5, $6, $7, $8)
+            INSERT INTO users (${fields}) VALUES (${values})
             RETURNING id
         `
 
-        const values = [
-            params[1].category_id,
-            params[1].user_id || 1,
-            params[1].name,
-            params[1].description,
-            params[1].old_price || params[1].price,
-            params[1].price,
-            params[1].quantity,
-            params[1].status || 1
-        ]
-
-        return db.query(query, values)
+        return await db.query(query, data)
     },
     filesCreate({ filename, path, product_id }) {
         const query = `
@@ -118,7 +100,7 @@ module.exports = {
         } catch (error) {
             console.error(error)
         }
-        
+
     },
     search(params) {
         const { filter, category, table } = params

@@ -1,4 +1,22 @@
 module.exports = {
+    fieldsCreate(data){
+        const fields = Object.keys(data)
+        return fields
+    }, 
+    valuesCreate(data){
+        let values = ''
+
+        let number = 1
+        const field = '$'
+
+        for (let item in data) {
+            values += `${field}${number},`
+            number++
+        }
+
+        values = values.substring(0,(values.length - 1))
+        return values
+    },
     date: function(timestamp) {
         const date = new Date(timestamp)
 
@@ -24,8 +42,5 @@ module.exports = {
             style: 'currency',
             currency: 'BRL'
         }).format(price / 100)
-    },
-    formateCNPJ(value) {
-
     }
 }
