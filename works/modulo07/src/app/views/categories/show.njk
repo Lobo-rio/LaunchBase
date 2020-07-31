@@ -7,23 +7,22 @@
 
 {% block content %}
 
-    <section class="users-registed container table">
+    <section class="categories-registed container table">
         <table>
 
             <tr>
                 <th>#</th>
                 <th>Nome</th>
-                <th>Email</th>
                 <th>Ações</th>
             </tr>
-            {% for user in users %}
+
+            {% for category in categories %}
                 <tr>
-                    <td>{{user.id}}</td>
-                    <td>{{user.name}}</td>
-                    <td>{{user.email}}</td>
+                    <td>{{category.id}}</td>
+                    <td>{{category.name}}</td>
                     <td>
-                        <a class="material-icons" href="/users/{{user.id}}/edit">create</a>
-                        <a class="material-icons" href="/users/{{user.id}}/edit">delete_forever</a>
+                        <a class="material-icons" href="/categories/{{category.id}}/edit">create</a>
+                        <a class="material-icons" href="/categories/{{category.id}}/edit">delete_forever</a>
                     </td>
                 </tr>
             {% endfor %}

@@ -1,0 +1,27 @@
+{% extends "layout.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/products.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section class="container form">
+        <form method="POST" action="/categories">
+
+            <div class="header">
+                <h3>Cadastrar Categoria</h3>
+            </div>
+            <div class="fields">
+                {% include "categories/parts/fields.njk" %}
+            </div>
+            
+            <button class="button" type="submit">Salvar</button>
+        </form>
+    </section>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script src="/scripts/index.js"></script>
+{% endblock scripts %}

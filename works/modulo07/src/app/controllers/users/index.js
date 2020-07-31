@@ -6,8 +6,17 @@ module.exports = {
     formRegister(req, res) {
         res.render("users/register.njk")
     },
-    show(req, res) {
-        return res.render("users/show.njk")
+    async show(req, res) {
+        let table = 'users'
+            options = ''
+            params = {}
+
+        params = { table, options }
+
+        const results = await optionsDb.all(params)
+        const users = results.rows
+
+        return res.render("users/show.njk", { users })
     },
     async create(req, res) {
 
@@ -15,6 +24,7 @@ module.exports = {
             delete req.body.passwordRepeat;
             let fields = fieldsCreate(req.body),
                 values = valuesCreate(fields),
+                table = 'users'
                 params = {}
 
             const passwordHash = await hash(req.body.password, 8)

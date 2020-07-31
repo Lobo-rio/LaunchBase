@@ -34,10 +34,10 @@ module.exports = {
     },
     async save(params) {
 
-        const { fields, values, data } = params
+        const { fields, values, table, data } = params
 
         const query = `
-            INSERT INTO users (${fields}) VALUES (${values})
+            INSERT INTO ${table} (${fields}) VALUES (${values})
             RETURNING id
         `
 
@@ -62,71 +62,65 @@ module.exports = {
         return db.query(query, values)
     },
     update(params) {
-        const query = `
-            UPDATE ${params[0]} SET
-                category_id = ($1),
-                user_id = ($2),
-                name = ($3),
-                description = ($4),
-                old_price = ($5),
-                price = ($6),
-                quantity = ($7),
-                status = ($8)
-            WHERE id = $9
-        `
+        const { query, data } = params
 
-        const values = [
-            params[1].category_id,
-            params[1].user_id,
-            params[1].name,
-            params[1].description,
-            params[1].old_price,
-            params[1].price,
-            params[1].quantity,
-            params[1].status,
-            params[1].id
-        ]
+        return db.query(query, data)
+    },
+    async deleteItems(params) {
 
-        return db.query(query, values)
+        try {
+            let { id, table } = params
+            await db.query(`DELETE FROM ${table} WHERE id = $1`, [id])
+        } catch (error) {
+            console.error(error)
+        }
+
     },
     async delete(params) {
 
         try {
-            const result = await db.query(`SELECT * FROM ${params[1]} WHERE id = $1`, [params[0]])
+            let { id, table } = params
+            const result = await db.query(`SELECT * FROM ${table} WHERE id = $1`, [id])
             const file = result.rows[0]
 
-            fs.unlinkSync(file.path)
-            return db.query(`DELETE FROM ${params[1]} WHERE id = $1`, [params[0]])
+            if (table == 'products') {
+                fs.unlinkSync(file.path)
+                return db.query(`DELETE FROM ${table} WHERE id = $1`, [id])
+            }
         } catch (error) {
             console.error(error)
         }
 
     },
     search(params) {
-        const { filter, category, table } = params
+        try {
+            const { filter, category, table } = params
 
-        let query = "",
-            filterQuery = `WHERE`
-
-        if (category) {
-            filterQuery = `${filterQuery}
-                ${table}.category_id = ${category}
-                AND`
+            let query = "",
+                filterQuery = `WHERE`
+    
+            if (category) {
+                filterQuery = `${filterQuery}
+                    ${table}.category_id = ${category}
+                    AND`
+            }
+    
+            filterQuery = `
+                ${filterQuery}
+                ${table}.name ilike '%${filter}%'
+                OR ${table}.description ilike '%${filter}%'
+            `
+            query = `
+                SELECT ${table}.*, 
+                categories.name AS category_name
+                FROM ${table}
+                LEFT JOIN categories ON (categories.id = ${table}.category_id)
+                ${filterQuery}
+            `
+    
+            return db.query(query) 
+        } catch (error) {
+            console.error(error)
         }
-
-        filterQuery = `
-            ${filterQuery}
-            ${table}.name ilike '%${filter}%'
-            OR ${table}.description ilike '%${filter}%'
-        `
-        query = `
-            SELECT ${table}.*, 
-            categories.name AS category_name
-            FROM ${table}
-            LEFT JOIN categories ON (categories.id = ${table}.category_id)
-            ${filterQuery}
-        `
-
-        return db.query(query)
     }
 }

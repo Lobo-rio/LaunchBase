@@ -1,0 +1,43 @@
+{% extends "layout.njk" %}
+
+{% block styles %}
+    <link rel="stylesheet" href="/styles/products.css">
+{% endblock styles %}
+
+{% block content %}
+
+    <section class="container form">
+        <form method="POST" action="/categories?_method=PUT">
+
+            <div class="header">
+                <h3>Editar Categoria</h3>
+            </div>
+            
+            <div class="fields">
+                {% include "categories/parts/fields.njk" %}
+            </div>
+
+            <input type="hidden" name="id" value="{{ category.id }}">
+
+            <button class="button" type="submit">Alterar</button>
+        </form>
+
+        <form id="form-delete" action="/categories?_method=DELETE" method="POST">
+            <input type="hidden" name="id" value="{{ category.id }}">
+            <button class="button delete" type="submit">Deletar</button>
+        </form>
+    </section>
+
+{% endblock content %}
+
+{% block scripts %}
+    <script>
+        const formDelete = document.querySelector('#form-delete')
+        formDelete.addEventListener('submit', function (e) {
+            const confirmation = confirm("Tem certeza que deseja deletar o registro?")
+            if (!confirmation) {
+                e.preventDefault
+            }
+        })
+    </script>
+{% endblock scripts %}
