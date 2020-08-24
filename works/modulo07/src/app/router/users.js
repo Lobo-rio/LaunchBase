@@ -17,8 +17,8 @@ Router.post('/password-reset', session.reset)
 Router.get('/register', users.formRegister)
 Router.post('/register', validators.post, users.create)
 
-Router.get('/', users.show)
-Router.put('/', users.update)
+Router.get('/', validators.show, users.show)
+Router.put('/', validators.update, users.update)
 Router.delete('/', users.delete)
 
 module.exports = Router
