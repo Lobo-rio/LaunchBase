@@ -92,6 +92,9 @@ module.exports = {
         }
 
     },
+    async deleteAll(params) {
+        console.log('Teste')
+    },
     search(params) {
         try {
             const { filter, category, table } = params

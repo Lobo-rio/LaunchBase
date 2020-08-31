@@ -17,7 +17,7 @@ Router.get("/ads/create", function(req, res){
 })
 
 Router.get("/accounts", function(req, res){
-    res.redirect("/users/register")
+    res.redirect("/users/login")
 })
 
 module.exports = Router

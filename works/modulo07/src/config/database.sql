@@ -74,3 +74,17 @@ CREATE TABLE "session" (
 WITH (OIDS=FALSE);
 
 ALTER TABLE "session" ADD CONSTRAINT "session_pkey" PRIMARY KEY ("sid") NOT DEFERRABLE INITIALLY IMMEDIATE;
+
+ALTER TABLE "products"
+DROP CONSTRAINT products_user_id_key,
+ADD CONSTRAINT products_user_id_key
+FOREIGN KEY ("user_id")
+REFERENCES "users" ("id")
+ON DELETE CASCADE;
+
+ALTER TABLE "files"
+DROP CONSTRAINT files_product_id_key,
+ADD CONSTRAINT files_product_id_key
+FOREIGN KEY ("product_id")
+REFERENCES "products" ("id")
+ON DELETE CASCADE;

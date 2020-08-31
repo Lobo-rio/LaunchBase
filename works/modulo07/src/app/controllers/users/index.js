@@ -88,7 +88,19 @@ module.exports = {
             })
         }
     },
-    delete(req, res) {
+    async delete(req, res) {
+        try {
+            await optionsDb.deleteAll(1)
+            //req.session.destroy()
 
+            return res.render("session/login", {
+                success: "Conta Deletada com sucesso!"
+            })
+        } catch (error) {
+            console.error(error)
+            return res.render("users/index", {
+                error: "Error ao tentar deletar sua conta!"
+            })
+        }
     }
 }
